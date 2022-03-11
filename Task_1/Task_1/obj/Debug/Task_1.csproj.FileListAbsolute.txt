@@ -1,0 +1,13 @@
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\Task_1.exe.config
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\Task_1.exe
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\Task_1.pdb
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\EntityFramework.dll
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\EntityFramework.SqlServer.dll
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\EntityFramework.xml
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\EntityFramework.SqlServer.xml
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\bin\Debug\ru\EntityFramework.resources.dll
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\obj\Debug\Task_1.csproj.CoreCompileInputs.cache
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\obj\Debug\Task_1.csproj.CopyComplete
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\obj\Debug\Task_1.exe
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\obj\Debug\Task_1.pdb
+E:\УП02.01\ТЕХ_ЧАСТЬ\Tasks\Task_1\Task_1\obj\Debug\Task_1.csprojAssemblyReference.cache

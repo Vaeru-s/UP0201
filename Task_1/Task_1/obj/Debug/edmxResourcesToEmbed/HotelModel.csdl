@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HotelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="RoomId" Type="Int32" />
+    <Property Name="ArrivalDate" Type="DateTime" Precision="0" />
+    <Property Name="ArrivalTime" Type="Time" Precision="7" />
+    <Property Name="DepartureDate" Type="DateTime" Precision="0" />
+    <Property Name="DepartureTime" Type="Time" Precision="7" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK__Booking__Custome__3D5E1FD2" FromRole="Booking" ToRole="Customers" />
+    <NavigationProperty Name="Room" Relationship="Self.FK__Booking__RoomId__3E52440B" FromRole="Booking" ToRole="Rooms" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="PassportID" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__Custome__3D5E1FD2" FromRole="Customers" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NumberOfPersons" Type="Int32" Nullable="false" />
+    <Property Name="NumberOfRooms" Type="Int32" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Bookings" Relationship="Self.FK__Booking__RoomId__3E52440B" FromRole="Rooms" ToRole="Booking" />
+  </EntityType>
+  <Association Name="FK__Booking__Custome__3D5E1FD2">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Booking__RoomId__3E52440B">
+    <End Role="Rooms" Type="Self.Room" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rooms">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HotelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bookings" EntityType="Self.Booking" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Rooms" EntityType="Self.Room" />
+    <AssociationSet Name="FK__Booking__Custome__3D5E1FD2" Association="Self.FK__Booking__Custome__3D5E1FD2">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Booking__RoomId__3E52440B" Association="Self.FK__Booking__RoomId__3E52440B">
+      <End Role="Rooms" EntitySet="Rooms" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
